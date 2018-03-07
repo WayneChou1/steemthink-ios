@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  SteemThink
+
+  Created by zhouzhiwei on 2018/2/26.
+  Copyright © 2018年 zijinph. All rights reserved.
+*/
+
+// MARK: - 首页
+"Search" = "Search";
+"Mine" = "Mine";
+"Main" = "Main";
+"New" = "New";
+"Hot" = "Hot";
+"Trending" = "Trending";
+
+// MARK: - 时间
+"now" = "now";
+"minutes ago" = "minutes ago";
+"hous ago" = "hous ago";
+"days ago" = "days ago";
+"months ago" = "months ago";
+"years ago" = "years ago";
+
+// MARK: - 下拉上拉
+"Pull-Down" = "Pull-Down";
+"Release" = "Release";
+"No More Data" = "No More Data";
+
+// MARK: - 用户
+"My Question" = "My Question";
+"My Answer" = "My Answer";
+"Replies To Me" = "Replies To Me";
+"Wallet" = "Wallet";
+"Logout" = "Logout";

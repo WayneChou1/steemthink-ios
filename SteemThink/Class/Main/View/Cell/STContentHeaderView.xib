@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="FB8-Pz-2BI" customClass="STContentHeaderView" customModule="SteemThink" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="309"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qom-pm-obS">
+                    <rect key="frame" x="8" y="76" width="359" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBz-yk-gxL">
+                    <rect key="frame" x="58" y="8" width="37.5" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_icon_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="K01-bs-Xhs">
+                    <rect key="frame" x="8" y="8" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="iZH-An-wbt"/>
+                        <constraint firstAttribute="width" constant="40" id="lLT-8U-l04"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHz-PE-MEV">
+                    <rect key="frame" x="58" y="31" width="31" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyM-W6-muX">
+                    <rect key="frame" x="8" y="53" width="359" height="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="hHz-PE-MEV" firstAttribute="leading" secondItem="sBz-yk-gxL" secondAttribute="leading" id="6kQ-pF-zpV"/>
+                <constraint firstAttribute="trailing" secondItem="MyM-W6-muX" secondAttribute="trailing" constant="8" id="C4l-K5-5qh"/>
+                <constraint firstItem="K01-bs-Xhs" firstAttribute="leading" secondItem="FB8-Pz-2BI" secondAttribute="leading" constant="8" id="DA5-xc-4VI"/>
+                <constraint firstItem="K01-bs-Xhs" firstAttribute="top" secondItem="FB8-Pz-2BI" secondAttribute="top" constant="8" id="Iji-YX-tjd"/>
+                <constraint firstItem="MyM-W6-muX" firstAttribute="leading" secondItem="FB8-Pz-2BI" secondAttribute="leading" constant="8" id="KrE-gg-pci"/>
+                <constraint firstAttribute="trailing" secondItem="Qom-pm-obS" secondAttribute="trailing" constant="8" id="Owb-4E-XOs"/>
+                <constraint firstItem="sBz-yk-gxL" firstAttribute="leading" secondItem="K01-bs-Xhs" secondAttribute="trailing" constant="10" id="Rlb-qP-wnX"/>
+                <constraint firstItem="sBz-yk-gxL" firstAttribute="top" secondItem="K01-bs-Xhs" secondAttribute="top" id="VHJ-4L-beT"/>
+                <constraint firstItem="Qom-pm-obS" firstAttribute="leading" secondItem="FB8-Pz-2BI" secondAttribute="leading" constant="8" id="kLe-rQ-96k"/>
+                <constraint firstItem="hHz-PE-MEV" firstAttribute="top" secondItem="sBz-yk-gxL" secondAttribute="bottom" constant="5" id="l73-8L-lF1"/>
+                <constraint firstItem="Qom-pm-obS" firstAttribute="top" secondItem="MyM-W6-muX" secondAttribute="bottom" constant="5" id="rs2-PR-ymO"/>
+                <constraint firstItem="MyM-W6-muX" firstAttribute="top" secondItem="K01-bs-Xhs" secondAttribute="bottom" constant="5" id="zUf-YQ-VEX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vBK-1v-ybl"/>
+            <connections>
+                <outlet property="contentLab" destination="Qom-pm-obS" id="aGp-gz-leu"/>
+                <outlet property="nameLab" destination="sBz-yk-gxL" id="1xB-xe-QK6"/>
+                <outlet property="timeLab" destination="hHz-PE-MEV" id="DQT-Dl-RTA"/>
+                <outlet property="titleLab" destination="MyM-W6-muX" id="cqj-B4-eQT"/>
+                <outlet property="userIconImgV" destination="K01-bs-Xhs" id="PCY-Ce-yTs"/>
+            </connections>
+            <point key="canvasLocation" x="-285.5" y="966.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="user_icon_placeholder" width="40" height="40"/>
+    </resources>
+</document>
