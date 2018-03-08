@@ -33,3 +33,16 @@
 "Replies To Me" = "Replies To Me";
 "Wallet" = "Wallet";
 "Logout" = "Logout";
+
+// MARK: - 正文
+"Content" = "Content";
+"No Comment" = "No Comment";
+
+// MARK: - 登录
+"Login" = "Login";
+
+// MARK: - 发布
+"Cancel" = "Cancel";
+"Post" = "Post";
+"Post Artical" = "Post Artical";
+"Please input your artical" = "Please input your artical";

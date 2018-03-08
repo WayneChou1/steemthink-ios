@@ -80,6 +80,7 @@ class STWMPageViewController: WMPageController {
 
     // MARK: - ItemAction
     @objc func postItemOnClick() -> Void {
-        
+        let mainNav = STNavigationViewController.init(rootViewController: STPostArticalViewController())
+        self.present(mainNav, animated: true, completion: nil)
     }
 }

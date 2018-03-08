@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="commentLab" destination="ZXa-ur-OtA" id="Yvs-Oo-CL8"/>
                 <outlet property="dollarLab" destination="yvi-DT-EJg" id="t19-ht-grN"/>
+                <outlet property="voteImgV" destination="mks-Qo-eH3" id="E6q-vh-0Ut"/>
                 <outlet property="voteLab" destination="vFX-TR-6Bk" id="Qqj-PG-fB1"/>
             </connections>
         </placeholder>
@@ -25,7 +26,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQL-Ao-JdI">
                     <rect key="frame" x="336" y="0.0" width="168" height="87"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_vote" translatesAutoresizingMaskIntoConstraints="NO" id="mks-Qo-eH3">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_unvote" translatesAutoresizingMaskIntoConstraints="NO" id="mks-Qo-eH3">
                             <rect key="frame" x="50.5" y="31" width="25" height="25"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFX-TR-6Bk">
@@ -36,12 +37,16 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="vFX-TR-6Bk" firstAttribute="centerY" secondItem="UQL-Ao-JdI" secondAttribute="centerY" id="Kuq-pD-dzB"/>
                         <constraint firstItem="vFX-TR-6Bk" firstAttribute="centerY" secondItem="mks-Qo-eH3" secondAttribute="centerY" id="NZE-sj-Z0A"/>
                         <constraint firstItem="vFX-TR-6Bk" firstAttribute="centerX" secondItem="UQL-Ao-JdI" secondAttribute="centerX" constant="13" id="dmb-bC-PFj"/>
                         <constraint firstItem="vFX-TR-6Bk" firstAttribute="leading" secondItem="mks-Qo-eH3" secondAttribute="trailing" constant="5" id="qlq-QM-Pjf"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="FOt-EB-EjD" appends="YES" id="JMB-OX-IUx"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0D-bA-6Ee">
                     <rect key="frame" x="168" y="0.0" width="168" height="87"/>
@@ -103,12 +108,17 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="51" y="234.5"/>
+            <point key="canvasLocation" x="-218" y="226"/>
         </view>
+        <tapGestureRecognizer id="FOt-EB-EjD">
+            <connections>
+                <action selector="voteViewOnTap:" destination="-1" id="o2C-Hr-Lsm"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="main_comment" width="25" height="25"/>
         <image name="main_doller" width="25" height="25"/>
-        <image name="main_vote" width="25" height="25"/>
+        <image name="main_unvote" width="25" height="25"/>
     </resources>
 </document>

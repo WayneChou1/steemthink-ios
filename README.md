@@ -1,2 +1,0 @@
-# steemthink-ios
-steemthink-ios

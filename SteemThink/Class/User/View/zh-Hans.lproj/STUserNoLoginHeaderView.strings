@@ -1,0 +1,6 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ogg-Pp-yDA"; */
+"Ogg-Pp-yDA.text" = "你尚未登录，登录后可以使用发帖，投票，评论等功能";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "XHo-Tp-jsv"; */
+"XHo-Tp-jsv.normalTitle" = "登录";

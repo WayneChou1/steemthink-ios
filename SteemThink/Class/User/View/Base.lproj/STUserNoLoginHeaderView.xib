@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="STUserNoLoginHeaderView" customModule="SteemThink" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你尚未登录，登录后可以使用发帖，投票，评论等功能" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogg-Pp-yDA">
+                    <rect key="frame" x="88" y="175" width="200" height="140"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="MZz-sC-hMK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_bg" translatesAutoresizingMaskIntoConstraints="NO" id="bGI-K5-ayj">
+                    <rect key="frame" x="0.0" y="20" width="375" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="yIV-QF-Rat"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_no_login" translatesAutoresizingMaskIntoConstraints="NO" id="a0P-nR-5N0">
+                    <rect key="frame" x="155" y="62" width="66" height="66"/>
+                    <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="33"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHo-Tp-jsv">
+                    <rect key="frame" x="112" y="320" width="150" height="30"/>
+                    <color key="backgroundColor" red="0.22352941179999999" green="0.60784313729999995" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="UaP-x6-Sdt"/>
+                        <constraint firstAttribute="height" constant="30" id="iwo-DB-kff"/>
+                    </constraints>
+                    <state key="normal" title="登录">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="loginBtnOnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="9AU-Dg-eX7"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bGI-K5-ayj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Aui-MY-Wmw"/>
+                <constraint firstItem="Ogg-Pp-yDA" firstAttribute="top" secondItem="bGI-K5-ayj" secondAttribute="bottom" constant="5" id="CuZ-qD-uA9"/>
+                <constraint firstItem="a0P-nR-5N0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MW8-W1-U7M"/>
+                <constraint firstItem="Ogg-Pp-yDA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OZt-dr-QH8"/>
+                <constraint firstItem="bGI-K5-ayj" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="RmT-Um-w4E"/>
+                <constraint firstItem="XHo-Tp-jsv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YQp-yx-pO8"/>
+                <constraint firstItem="XHo-Tp-jsv" firstAttribute="top" secondItem="bGI-K5-ayj" secondAttribute="bottom" constant="150" id="aHj-Db-w6n"/>
+                <constraint firstItem="XHo-Tp-jsv" firstAttribute="top" secondItem="Ogg-Pp-yDA" secondAttribute="bottom" constant="5" id="cZu-Md-vcE"/>
+                <constraint firstItem="a0P-nR-5N0" firstAttribute="centerY" secondItem="bGI-K5-ayj" secondAttribute="centerY" id="dKz-1g-zT2"/>
+                <constraint firstItem="bGI-K5-ayj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qrK-wK-It6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="71" y="50"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="user_bg" width="640" height="300"/>
+        <image name="user_no_login" width="66" height="66"/>
+    </resources>
+</document>

@@ -9,6 +9,9 @@ pod 'Alamofire'
 pod 'MBProgressHUD'
 pod 'MJRefresh'
 pod 'WMPageController', '~> 1.4.1' 
+pod 'SnapKit'
+pod 'IQKeyboardManager'
+pod 'SwiftDate'
 
 use_frameworks!
 

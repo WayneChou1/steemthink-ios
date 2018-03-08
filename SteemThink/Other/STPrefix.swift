@@ -17,4 +17,14 @@ func localizedString(key:String,comment:String) -> String {
     return Bundle.main.localizedString(forKey: key, value: nil, table: nil)
 }
 
+// MARK: - 保存用户信息数据
+func userDefault() -> UserDefaults{
+    return UserDefaults.standard
+}
+
+// 字体
+func kfont(size:CGFloat) -> UIFont{
+    return UIFont.systemFont(ofSize: size)
+}
+
 

@@ -10,3 +10,4 @@
 #import "MJDIYAutoFooter.h"
 #import "MJDIYHeader.h"
 #import <WMPageController/WMPageController.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>

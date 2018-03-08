@@ -15,7 +15,7 @@ enum MainRequestType: Int {
     case Trending = 2
 }
 
-class STMainViewController: UITableViewController {
+class STMainViewController: UITableViewController,STMainCellDelegate {
     
     lazy var dataSource:[STContent] = {
         let source:[STContent] = []
@@ -44,6 +44,9 @@ class STMainViewController: UITableViewController {
     func setUpTableView() -> Void {
         self.tableView.tableFooterView = UIView.init()
         self.tableView.register(UINib.init(nibName:String(describing: type(of:STMainTableViewCell())), bundle: Bundle.main), forCellReuseIdentifier: STMainTableViewCell.cellIdentifier())
+        self.tableView.estimatedRowHeight = 218
+        self.tableView.separatorInset = UIEdgeInsetsMake(0, 12, 0, 12)
+        
         self.tableView.mj_header = MJDIYHeader.init(refreshingBlock: {
             self.loadData()
         })
@@ -72,18 +75,22 @@ class STMainViewController: UITableViewController {
         }
         let url = urlH! + "query=" + jsonStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
-        STClient.get(url: url, parameters: nil, to: self.view) { (response: Any?,error: Error?) in
-            if response is NSArray{
-                let arr3:NSArray = response as! NSArray
-                for dict3:Dictionary in arr3 as! [Dictionary<String, Any>]{
-                    // 遍历得到Model
-                    let trending = STContent.init(dict: dict3)
-                    self.dataSource.append(trending)
+        STClient.get(url: url, parameters: nil, to: nil) { (response: Any?,error: Error?) in
+            
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshingWithNoMoreData()
+            
+            if !(error != nil) {
+                if response is NSArray{
+                    let arr3:NSArray = response as! NSArray
+                    for dict3:Dictionary in arr3 as! [Dictionary<String, Any>]{
+                        // 遍历得到Model
+                        let trending = STContent.init(dict: dict3)
+                        self.dataSource.append(trending)
+                    }
                 }
-                self.tableView.mj_header.endRefreshing()
-                self.tableView.mj_footer.endRefreshingWithNoMoreData()
+                self.tableView.reloadData()
             }
-            self.tableView.reloadData()
         }
     }
     
@@ -98,7 +105,9 @@ class STMainViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:STMainTableViewCell = tableView.dequeueReusableCell(withIdentifier: STMainTableViewCell.cellIdentifier(), for: indexPath) as! STMainTableViewCell
-        cell.trending = self.dataSource[indexPath.row]
+        cell.content = self.dataSource[indexPath.row]
+        cell.indexPath = indexPath
+        cell.delegate = self
         return cell
     }
     
@@ -106,8 +115,18 @@ class STMainViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         let content = self.dataSource[indexPath.row]
         let VC:STContentDetailViewController = UIStoryboard.init(name: "STBodyStoryboard", bundle: Bundle.main).instantiateViewController(withIdentifier: String(describing: STContentDetailViewController.classForCoder())) as! STContentDetailViewController
-        self.navigationController?.pushViewController(VC, animated: true)
         VC.content = content
+        VC.hidesBottomBarWhenPushed = true;
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
+    
+    //MARK: - STMainCellDelegate
+    func voteWithIndexPath(indexPath: IndexPath) {
+        print("点赞~~~~~~~~~~~")
+        let content = self.dataSource[indexPath.row]
+//        self.tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.none)
+        STClient.vote(voter: UserDataManager.sharedInstance.getUserName(), author: content.author, permlink: content.permlink, weight: 10000) { (response, error) in
+        }
     }
 }
 

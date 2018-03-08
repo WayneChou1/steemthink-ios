@@ -24,6 +24,8 @@ class STAFNetworkTools: AFHTTPSessionManager {
         let instance = STAFNetworkTools()
         instance.responseSerializer.acceptableContentTypes?.insert("text/html")
         instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        instance.requestSerializer = AFJSONRequestSerializer.init()
+        instance.requestSerializer.timeoutInterval = 20.0
         return instance
     }()
     
@@ -47,11 +49,13 @@ class STAFNetworkTools: AFHTTPSessionManager {
         
         // 定义请求成功的闭包
         let success = { (dataTask: URLSessionDataTask, responseObject: Any?) -> Void in
+            print("responseObject =========" + "\(String(describing: responseObject))")
             finished(responseObject, nil)
         }
         
         // 定义请求失败的闭包
         let failure = { (dataTask: URLSessionDataTask?, error: Error) -> Void in
+            print("request Error =========" + error.localizedDescription)
             finished(nil, error)
         }
         
@@ -72,11 +76,13 @@ class STAFNetworkTools: AFHTTPSessionManager {
         
         // 定义请求成功的闭包
         let success = { (dataTask: URLSessionDataTask, responseObject: Any?) -> Void in
+            print("responseObject =========" + "\(String(describing: responseObject))")
             finished(responseObject, nil)
         }
         
         // 定义请求失败的闭包
         let failure = { (dataTask: URLSessionDataTask?, error: Error) -> Void in
+            print("request Error =========" + error.localizedDescription)
             finished(nil, error)
         }
         

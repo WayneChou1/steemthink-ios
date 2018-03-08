@@ -35,14 +35,6 @@ class STNavigationViewController: UINavigationController,UIGestureRecognizerDele
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if self.viewControllers.count >= 1 {
-            // 这时push进来的控制器viewController，不是第一个子控制器（不是根控制器）
-            /* 设置导航栏上面的内容 */
-            // 设置左边的返回按钮
-            let spaceItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil)
-            spaceItem.width = -20
-            let backItem = UIBarButtonItem.init(image: UIImage.init(named: "steemit_back"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(leftItemOnClick))
-            viewController.navigationItem.leftBarButtonItems = [backItem,spaceItem]
-            viewController.hidesBottomBarWhenPushed = true
         }
         
         if self.responds(to: #selector(getter: self.interactivePopGestureRecognizer)) {
@@ -52,6 +44,13 @@ class STNavigationViewController: UINavigationController,UIGestureRecognizerDele
         super.pushViewController(viewController, animated: animated)
     }
     
+    func setBackItem(viewController:UIViewController) -> Void {
+        let backItem:UIBarButtonItem = UIBarButtonItem.init(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        viewController.navigationController?.navigationBar.backIndicatorImage = UIImage.init(named: "steemit_back");
+        //            viewController.navigationController?.navigationBar.backIndicatorTransitionMaskImage
+        viewController.navigationItem.backBarButtonItem = backItem;
+    }
+    
     //MARK: - UINavigationDelegate
     //UINavigationControllerDelegate方法
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
@@ -59,6 +58,7 @@ class STNavigationViewController: UINavigationController,UIGestureRecognizerDele
         //清空滑动返回手势的代理就能实现
         if viewController == self.viewControllers[0] {
             self.interactivePopGestureRecognizer!.isEnabled = false
+            self.setBackItem(viewController: viewController)
         }
         else {
             self.interactivePopGestureRecognizer!.isEnabled = true
@@ -70,3 +70,10 @@ class STNavigationViewController: UINavigationController,UIGestureRecognizerDele
         self.popViewController(animated: true)
     }
 }
+
+//extension UINavigationBar{
+//    open override static func initialize() {
+//
+//    }
+//}
+

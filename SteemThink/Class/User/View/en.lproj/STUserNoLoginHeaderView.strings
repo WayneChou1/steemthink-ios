@@ -1,0 +1,6 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ogg-Pp-yDA"; */
+"Ogg-Pp-yDA.text" = "You have not login, and you can use post, vote, comment and other functions after login";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "XHo-Tp-jsv"; */
+"XHo-Tp-jsv.normalTitle" = "Login";

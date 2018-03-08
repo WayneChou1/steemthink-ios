@@ -17,6 +17,7 @@ class STUserEscrow: STBaseModel {
 class STUserProfile: STBaseModel {
     var cover_image:String = ""
     var profile_image:String = ""
+    var name:String?
     var about:String = ""
     var website:String = ""
 }

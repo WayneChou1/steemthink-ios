@@ -31,5 +31,18 @@
 "My Question" = "我的问题";
 "My Answer" = "我的回答";
 "Replies To Me" = "回复";
-"Wallet" = "钱宝";
+"Wallet" = "钱包";
 "Logout" = "退出";
+
+// MARK: - 正文
+"Content" = "正文";
+"No Comment" = "暂无评论";
+
+// MARK: - 登录
+"Login" = "登录";
+
+// MARK: - 发布
+"Cancel" = "取消";
+"Post" = "发布";
+"Post Artical" = "发布文章";
+"Please input your artical" = "请输入文章内容";

@@ -62,7 +62,7 @@ extension MBProgress_STExtension {
         return HUD
     }
     
-    class func ST_ShowHUDHidAfterSecondWithMsgType(title : String, view : UIView, afterSecond : TimeInterval, msgType : STMBProgress) -> MBProgressHUD {
+    class func ST_ShowHUDHidAfterSecondWithMsgType(title : String, view : UIView, afterSecond : TimeInterval, msgType : STMBProgress) {
         
         let HUD = MBProgressHUD.showAdded(to: view, animated: true)
         HUD.label.font = UIFont.systemFont(ofSize: font_size)
@@ -73,7 +73,6 @@ extension MBProgress_STExtension {
         HUD.bezelView.alpha = opacity
         HUD.mode = MBProgressHUDMode.customView
         HUD.hide(animated: true, afterDelay: afterSecond)
-        return HUD
     }
     
     /// 根据显示类型来选择背景图片

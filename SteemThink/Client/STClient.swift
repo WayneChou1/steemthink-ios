@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 let baseURL:String = "https://v2.steemconnect.com"
 let appId:String = ""
@@ -23,23 +24,79 @@ let discussions_by_hot = "https://api.steemjs.com/get_discussions_by_hot?"
 //GET /get_accounts
 let get_accounts = "https://api.steemjs.com/get_accounts?"
 
+let get_content_replies = "https://api.steemjs.com/get_content_replies?"
 
+let get_login_url = "https://v2.steemconnect.com/oauth2/authorize?client_id=steemthink.com&redirect_uri=https://cnsteem.github.io/sc2-angular&scope=vote,comment"
+
+//POST /broadcast
+let post_broadcast = "https://v2.steemconnect.com/api/broadcast/"
 
 class STClient: NSObject {
     
     typealias STClientCallBack = (_ response: Any?,_ error: Error?)->()
     
-    func post(url:String,body:Dictionary<String, Any>?,cb:String?) -> Void {
+    //MARK: - 点赞
+    class func vote(
+                    voter:String,
+                    author:String,
+                    permlink:String,
+                    weight:NSInteger,
+                    finished:@escaping STClientCallBack){
+        let param = ["voter": voter,
+                     "author": author,
+                     "permlink":permlink,
+                     "weight":weight,
+                     ] as [String : Any]
+        self.broadcast(body: ["operations":[["vote",param]]],finished: finished)
+    }
+    
+    //MARK: - 评论 & 发表文章
+    class func comment(
+                 parentAuthor:String,
+                 parentPermlink:String,
+                 author:String,
+                 permlink:String,
+                 body:String,
+                 finished:@escaping STClientCallBack) {
+        
+        let param = ["parent_author": parentAuthor,
+                     "parent_permlink": parentPermlink,
+                     "author":author,
+                     "permlink":permlink,
+                     "title":"",
+                     "body":body,
+                     "json_metadata": ""]
+        
+        self.broadcast(body: ["operations":[["comment",param]]],finished: finished)
+    }
+    
+    class func broadcast(body:Dictionary<String, Any>,
+        finished:@escaping STClientCallBack) {
+//        print("jsonData ==============="+"\(NSDictionary_STExtension.getJSONStringFromDictionary(dictionary: body))")
+        self.post(url: post_broadcast, body: body, finished: finished)
+    }
+    
+    class func post(url:String,body:Dictionary<String, Any>,finished:@escaping STClientCallBack) -> Void {
         let client = STAFNetworkTools.sharedTools;
-//        设置请求的编码类型
-        client.requestSerializer.setValue("", forHTTPHeaderField: "")
-//        var url:String = baseURL
-//        var r = (new Date).toISOString().replace(/[^a-zA-Z0-9]+/g, "").toLowerCase();
-//        return e = e.replace(/(-\d{8}t\d{9}z)/g, ""), "re-" + t + "-" + e + "-" + r
+//        设置请求的头token
+        client.requestSerializer.setValue(UserDataManager.sharedInstance.getToken(), forHTTPHeaderField: "Authorization")
+        client.request(method: .POST, urlString: url, parameters: body as AnyObject) { (response, error) in
+            finished(response,error)
+        }
     }
     
     class func get(url:String!,parameters:AnyObject?,to:UIView?,finished:@escaping STClientCallBack){
+        var hud:MBProgressHUD?
+        if (to != nil){
+            hud = MBProgress_STExtension.ST_ShowHUDAddedToView(view: to!, title: "", animated: true)
+        }
         STAFNetworkTools.sharedTools.request(method: .GET, urlString: url, parameters: parameters) { (response: Any?,error: Error?) in
+            if (hud != nil) {
+                hud?.hide(animated: true)
+            }
+            if (error != nil) && (to != nil) {
+                MBProgress_STExtension.ST_ShowHUDHidAfterSecondWithMsgType(title: (error?.localizedDescription)!, view: to!, afterSecond: 1.5, msgType: STMBProgress.Error)
+            }
             finished(response,error)
         }
     }
