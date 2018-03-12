@@ -14,9 +14,16 @@ class NSDate_STExtension: NSObject {
 
 extension NSDate_STExtension{
     class func getDateLong(fromDate:String) -> String {
+        
         let dateFormatter = DateFormatter.init()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         let timeDate = dateFormatter.date(from: fromDate)
+        
+        // 如果无法格式化，直接返回空字符串
+        if timeDate == nil {
+            return ""
+        }
+        
         let zone = NSTimeZone.system
         let interval = zone.secondsFromGMT(for: timeDate!)
         let myDate = timeDate?.addingTimeInterval(TimeInterval(interval))

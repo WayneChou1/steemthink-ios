@@ -109,6 +109,7 @@
             break;
         case MJRefreshStateNoMoreData:
             self.label.text = [[NSBundle mainBundle] localizedStringForKey:@"No More Data" value:nil table:nil];
+            self.label.hidden = NO;
             [self.logo stopAnimating];
             self.logo.hidden = YES;
             [self.logo startAnimating];

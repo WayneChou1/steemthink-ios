@@ -111,6 +111,7 @@ class STCommentInputView: UIView,UITextViewDelegate {
             if self.handler != nil && text.count != 0{
                 self.handler!(textView.text)
                 textView.text = ""
+                placeholder.text = "输入文字信息"
             }
             textView.resignFirstResponder()
             return false

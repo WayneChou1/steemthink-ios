@@ -15,7 +15,7 @@ enum MainRequestType: Int {
     case Trending = 2
 }
 
-class STMainViewController: UITableViewController,STMainCellDelegate {
+class STMainViewController: UITableViewController{
     
     lazy var dataSource:[STContent] = {
         let source:[STContent] = []
@@ -107,7 +107,6 @@ class STMainViewController: UITableViewController,STMainCellDelegate {
         let cell:STMainTableViewCell = tableView.dequeueReusableCell(withIdentifier: STMainTableViewCell.cellIdentifier(), for: indexPath) as! STMainTableViewCell
         cell.content = self.dataSource[indexPath.row]
         cell.indexPath = indexPath
-        cell.delegate = self
         return cell
     }
     
@@ -118,15 +117,6 @@ class STMainViewController: UITableViewController,STMainCellDelegate {
         VC.content = content
         VC.hidesBottomBarWhenPushed = true;
         self.navigationController?.pushViewController(VC, animated: true)
-    }
-    
-    //MARK: - STMainCellDelegate
-    func voteWithIndexPath(indexPath: IndexPath) {
-        print("点赞~~~~~~~~~~~")
-        let content = self.dataSource[indexPath.row]
-//        self.tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.none)
-        STClient.vote(voter: UserDataManager.sharedInstance.getUserName(), author: content.author, permlink: content.permlink, weight: 10000) { (response, error) in
-        }
     }
 }
 

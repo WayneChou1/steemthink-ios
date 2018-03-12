@@ -9,7 +9,7 @@
 import UIKit
 import WMPageController
 
-class STWMPageViewController: WMPageController {
+class STWMPageViewController: WMPageController,UISearchBarDelegate {
     
     let titleArr:[String]! = [localizedString(key: "New", comment: ""),localizedString(key: "Hot", comment: ""),localizedString(key: "Trending", comment: "")]
 
@@ -39,6 +39,7 @@ class STWMPageViewController: WMPageController {
     func setUpNavigationBar() -> Void {
         let searchBar = UISearchBar.init(frame: CGRect.zero)
         searchBar.placeholder = localizedString(key: "Search", comment: "")
+        searchBar.delegate = self
         self.navigationItem.titleView = searchBar
         
         // 导航栏放置UISearchBar 导航栏高度变高 (iOS 11)
@@ -76,6 +77,13 @@ class STWMPageViewController: WMPageController {
     
     override func pageController(_ pageController: WMPageController, titleAt index: Int) -> String {
         return titleArr[index]
+    }
+    
+    //MARK: - UISearchBarDelegate
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        let VC = STSearchViewController()
+        self.navigationController?.pushViewController(VC, animated: true)
+        return false
     }
 
     // MARK: - ItemAction

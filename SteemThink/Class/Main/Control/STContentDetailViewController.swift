@@ -80,6 +80,7 @@ class STContentDetailViewController: UIViewController,UITableViewDelegate,UITabl
         let url = get_content_replies + "author=" + (content?.author)! + "&permlink=" + (content?.permlink)!
         STClient.get(url: url, parameters: nil, to: nil) { (response: Any?,error: Error?) in
             self.tableView.mj_header.endRefreshing()
+            self.dataSource.removeAll()
             if response is NSArray{
                 let dicArr:NSArray = response as! NSArray
                 
@@ -112,6 +113,7 @@ class STContentDetailViewController: UIViewController,UITableViewDelegate,UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:STContentDetailTableViewCell = tableView.dequeueReusableCell(withIdentifier: STContentDetailTableViewCell.cellIdentifier(), for: indexPath) as! STContentDetailTableViewCell
+        cell.indexPath = indexPath
         cell.comment = self.dataSource[indexPath.row]
         return cell
     }
@@ -123,7 +125,7 @@ class STContentDetailViewController: UIViewController,UITableViewDelegate,UITabl
         print("permlink ========" + permlink!)
         
         if permlink != nil {
-            STClient.comment(parentAuthor: (content?.author)!, parentPermlink: (content?.permlink)!, author: UserDataManager.sharedInstance.getUserName(), permlink: permlink!, body: text!) { (response, error) in
+            STClient.comment(parentAuthor: (content?.author)!, parentPermlink: (content?.permlink)!, author: UserDataManager.sharedInstance.getUserName(), permlink: permlink!, body: text!, to:self.view) { (response, error) in
                 self.tableView.mj_header.beginRefreshing()
             }
         }

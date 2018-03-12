@@ -60,8 +60,8 @@
 		626C0559204F778B0060CB26 /* STPostArticalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626C0557204F778B0060CB26 /* STPostArticalViewController.swift */; };
 		626C055A204F778B0060CB26 /* STPostArticalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 626C0558204F778B0060CB26 /* STPostArticalViewController.xib */; };
 		626C055D204F86DA0060CB26 /* STTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626C055C204F86DA0060CB26 /* STTextView.swift */; };
+		6273AB0D205126810081B6DF /* STSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6273AB0C205126810081B6DF /* STSearchResult.swift */; };
 		627FE3D32043A13B00D34A36 /* STMainCellFunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627FE3D22043A13B00D34A36 /* STMainCellFunctionView.swift */; };
-		627FE3D52043A32600D34A36 /* STMainCellFunctionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 627FE3D42043A32600D34A36 /* STMainCellFunctionView.xib */; };
 		627FE3DE204424CD00D34A36 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 627FE3E0204424CD00D34A36 /* InfoPlist.strings */; };
 		627FE3E42044256700D34A36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 627FE3E62044256700D34A36 /* Localizable.strings */; };
 		627FE3E9204425C500D34A36 /* STNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627FE3E8204425C500D34A36 /* STNavigationViewController.swift */; };
@@ -172,8 +172,8 @@
 		626C0557204F778B0060CB26 /* STPostArticalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STPostArticalViewController.swift; sourceTree = "<group>"; };
 		626C0558204F778B0060CB26 /* STPostArticalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = STPostArticalViewController.xib; sourceTree = "<group>"; };
 		626C055C204F86DA0060CB26 /* STTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTextView.swift; sourceTree = "<group>"; };
+		6273AB0C205126810081B6DF /* STSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STSearchResult.swift; sourceTree = "<group>"; };
 		627FE3D22043A13B00D34A36 /* STMainCellFunctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STMainCellFunctionView.swift; sourceTree = "<group>"; };
-		627FE3D42043A32600D34A36 /* STMainCellFunctionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = STMainCellFunctionView.xib; sourceTree = "<group>"; };
 		627FE3D82044239900D34A36 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		627FE3DF204424CD00D34A36 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		627FE3E1204424DB00D34A36 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -282,8 +282,8 @@
 		62497F1D2044F07C00D1E607 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				62497F232044F0C300D1E607 /* STSearchViewController.swift */,
-				62497F242044F0C300D1E607 /* STSearchViewController.xib */,
+				6273AB0B2051261C0081B6DF /* Model */,
+				6273AB0A205126070081B6DF /* Control */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -365,6 +365,23 @@
 			path = PostArtical;
 			sourceTree = "<group>";
 		};
+		6273AB0A205126070081B6DF /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				62497F232044F0C300D1E607 /* STSearchViewController.swift */,
+				62497F242044F0C300D1E607 /* STSearchViewController.xib */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		6273AB0B2051261C0081B6DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6273AB0C205126810081B6DF /* STSearchResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		627FE3D62043E69500D34A36 /* Control */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,7 +417,6 @@
 			children = (
 				6280F86D2040F76E00A1F39B /* Cell */,
 				627FE3D22043A13B00D34A36 /* STMainCellFunctionView.swift */,
-				627FE3D42043A32600D34A36 /* STMainCellFunctionView.xib */,
 				62BC7C412046A19E00FFC7D1 /* STContentHeaderView.swift */,
 				62BC7C432046A1AD00FFC7D1 /* STContentHeaderView.xib */,
 				622D245620479CAD00B84F4E /* STContentNoDataFooterView.swift */,
@@ -758,7 +774,6 @@
 				622D245920479CBD00B84F4E /* STContentNoDataFooterView.xib in Resources */,
 				62497F652044FA2A00D1E607 /* loading_v1_00001@2x.png in Resources */,
 				62497F602044FA2A00D1E607 /* loading_v1_00027@2x.png in Resources */,
-				627FE3D52043A32600D34A36 /* STMainCellFunctionView.xib in Resources */,
 				62497F582044FA2A00D1E607 /* loading_v1_00022@2x.png in Resources */,
 				62497F4E2044FA2A00D1E607 /* loading_v1_00007@2x.png in Resources */,
 				62497F262044F0C300D1E607 /* STSearchViewController.xib in Resources */,
@@ -867,6 +882,7 @@
 				62497F71204563D700D1E607 /* NSArray_STExtension.swift in Sources */,
 				6280F8F42041490800A1F39B /* NSDictionary_STExtension.swift in Sources */,
 				62A587EE203EB4A900021655 /* STAFNetworkTools.swift in Sources */,
+				6273AB0D205126810081B6DF /* STSearchResult.swift in Sources */,
 				62497F1C2044EC8800D1E607 /* STTabBarViewController.swift in Sources */,
 				62BC7C392046863F00FFC7D1 /* STContentDetailViewController.swift in Sources */,
 				6280F8F12041323200A1F39B /* STBaseModel.swift in Sources */,
