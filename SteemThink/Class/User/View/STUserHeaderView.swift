@@ -32,7 +32,7 @@ class STUserHeaderView: UIView {
         
         let author = [authorName]
         let jsonStr = NSArray_STExtension.getJSONStringFromArray(array:author as [AnyObject])
-        let url = get_accounts + "names[]=" + jsonStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = get_accounts + jsonStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         STAFNetworkTools.sharedTools.request(method: .GET, urlString: url, parameters: nil) { (response: Any?,error: Error?) in
             if response is NSArray{
                 for dic:Dictionary in response as! [Dictionary<String, Any>]{

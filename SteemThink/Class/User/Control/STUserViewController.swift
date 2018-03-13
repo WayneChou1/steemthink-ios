@@ -81,7 +81,17 @@ class STUserViewController: UITableViewController,UserNoLoginDelegate {
         
         if UserDataManager.sharedInstance.isLogin() {
             if indexPath.section == 0{
-                
+                var VC:UIViewController? = nil
+                if indexPath.row == 0 {
+                    // 问题
+                    VC = STMyBlogViewController()
+                }
+                if indexPath.row == 3 {
+                    // 钱包
+                    VC = STWalletViewController.initWithStortBorad(nibName: "STUserStoryboard")
+                }
+                VC?.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(VC!, animated: true)
             }
             if indexPath.section == 1{
                 UserDataManager.sharedInstance.logout()

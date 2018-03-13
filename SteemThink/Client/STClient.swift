@@ -13,18 +13,21 @@ let baseURL:String = "https://v2.steemconnect.com"
 let appId:String = ""
 
 //GET /get_discussions_by_trending
-let discussions_by_trending = "https://api.steemjs.com/get_discussions_by_trending?"
+let discussions_by_trending = "https://api.steemjs.com/get_discussions_by_trending?query="
 
 //GET /get_discussions_by_created
-let discussions_by_created = "https://api.steemjs.com/get_discussions_by_created?"
+let discussions_by_created = "https://api.steemjs.com/get_discussions_by_created?query="
 
 //GET /get_discussions_by_hot
-let discussions_by_hot = "https://api.steemjs.com/get_discussions_by_hot?"
+let discussions_by_hot = "https://api.steemjs.com/get_discussions_by_hot?query="
 
 //GET /get_accounts
-let get_accounts = "https://api.steemjs.com/get_accounts?"
+let get_accounts = "https://api.steemjs.com/get_accounts?names[]="
 
 let get_content_replies = "https://api.steemjs.com/get_content_replies?"
+
+//GET /get_discussions_by_blog
+let get_discussions_by_blog = "https://api.steemjs.com/get_discussions_by_blog?query="
 
 let get_login_url = "https://v2.steemconnect.com/oauth2/authorize?client_id=steemthink.com&redirect_uri=https://cnsteem.github.io/sc2-angular&scope=vote,comment"
 

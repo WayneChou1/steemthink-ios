@@ -30,6 +30,9 @@ class STComment: STBaseModel {
     var active_votes_arr : [STContentActiveVotes]? = []
     var json_meta : STMetaData?
     
+    //用来判断是否正使用此模型来网络请求
+    var loading:Bool = false
+    
     override init(dict : [String : Any]) {
         super.init()
         setValuesForKeys(dict)

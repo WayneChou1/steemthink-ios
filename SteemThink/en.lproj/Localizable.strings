@@ -46,3 +46,9 @@
 "Post" = "Post";
 "Post Artical" = "Post Artical";
 "Please input your artical" = "Please input your artical";
+
+// MARK: - 钱包
+"Wallet" = "Wallet";
+
+// MARK: - 我的问题
+"My Questions" = "My Questions";

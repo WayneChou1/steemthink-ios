@@ -26,4 +26,7 @@ class STSearchResult: STBaseModel {
     var author : String = ""
     var type : String = ""
     var summary : String = ""
+    
+    //用来判断是否正使用此模型来网络请求
+    var loading:Bool = false
 }

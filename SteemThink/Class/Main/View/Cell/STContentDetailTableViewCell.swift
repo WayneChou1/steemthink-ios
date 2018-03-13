@@ -72,6 +72,7 @@ class STContentDetailTableViewCell: STBaseTableViewCell {
         
         let voteStr = String(format: "%d",(comment?.active_votes_arr?.count)!)
         let item2 = functionView.items![1]
+        item2.showActivityAnimate(isAnimate: (comment?.loading)!)
         
         if UserDataManager.sharedInstance.isLogin() {
             for vote in (comment?.active_votes_arr)! {
@@ -88,9 +89,10 @@ class STContentDetailTableViewCell: STBaseTableViewCell {
     //MARK: - Vote
     @objc func voteViewOnTap() {
         if self.favor {
-            let window = UIApplication.shared.keyWindow
+            comment?.loading = true
             let idx = self.indexPath
-            STClient.vote(voter: UserDataManager.sharedInstance.getUserName(), author: comment!.author, permlink: comment!.permlink, weight: 10000, to:window) { (response, error) in
+            STClient.vote(voter: UserDataManager.sharedInstance.getUserName(), author: comment!.author, permlink: comment!.permlink, weight: 10000, to:nil) { (response, error) in
+                self.comment?.loading = false
                 if error != nil && idx == self.indexPath{
                     self.voteAnimate()
                 }

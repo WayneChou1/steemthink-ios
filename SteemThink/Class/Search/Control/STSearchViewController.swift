@@ -52,7 +52,7 @@ class STSearchViewController: UIViewController,UITableViewDelegate,UITableViewDa
     //MARK: - 初始化TableView
     func setUpTableView() -> Void {
         self.tableView.tableFooterView = UIView()
-        self.tableView.register(UINib.init(nibName:String(describing: type(of:STMainTableViewCell())), bundle: Bundle.main), forCellReuseIdentifier: STMainTableViewCell.cellIdentifier())
+        self.tableView.register(UINib.init(nibName:String(describing: type(of:STSearchCell())), bundle: Bundle.main), forCellReuseIdentifier: STSearchCell.cellIdentifier())
         self.tableView.estimatedRowHeight = 218
         self.tableView.separatorInset = UIEdgeInsetsMake(0, 12, 0, 12)
 
@@ -83,6 +83,10 @@ class STSearchViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     }
                 }
                 
+                if self.page == 1 {
+                    self.dataSource.removeAll()
+                }
+                
                 // 数据装载
                 if responseData["results"] is NSArray{
                     let arr:NSArray = responseData["results"] as! NSArray
@@ -107,7 +111,7 @@ class STSearchViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:STMainTableViewCell = tableView.dequeueReusableCell(withIdentifier: STMainTableViewCell.cellIdentifier(), for: indexPath) as! STMainTableViewCell
+        let cell:STSearchCell = tableView.dequeueReusableCell(withIdentifier: STSearchCell.cellIdentifier(), for: indexPath) as! STSearchCell
         cell.searchResult = self.dataSource[indexPath.row]
         cell.indexPath = indexPath
         return cell
@@ -121,10 +125,6 @@ class STSearchViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //        VC.hidesBottomBarWhenPushed = true;
 //        self.navigationController?.pushViewController(VC, animated: true)
     }
-    
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        self.searchBar?.resignFirstResponder()
-//    }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.searchBar?.resignFirstResponder()

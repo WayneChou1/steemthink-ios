@@ -48,6 +48,9 @@ class STUser: STBaseModel {
     var id: Int32 = 0
     
     var name:String = ""
+    var balance:String = ""
+    var sbd_balance:String = ""
+    var savings_sbd_balance:String = ""
     var json_metadata:String = ""
     var json_meta:STUserMetaData?
     

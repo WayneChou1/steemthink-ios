@@ -79,12 +79,16 @@
 		628C61FE203FF89400045030 /* STLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628C61FC203FF89400045030 /* STLoginViewController.swift */; };
 		628C61FF203FF89400045030 /* STLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 628C61FD203FF89400045030 /* STLoginViewController.xib */; };
 		628C620520400CCB00045030 /* MBProgress_STExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628C620420400CCB00045030 /* MBProgress_STExtension.swift */; };
+		62919A09205763AD00DCA253 /* STSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62919A07205763AD00DCA253 /* STSearchCell.swift */; };
+		62919A0A205763AD00DCA253 /* STSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62919A08205763AD00DCA253 /* STSearchCell.xib */; };
 		6291B11220318B500061FDF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291B11120318B500061FDF8 /* AppDelegate.swift */; };
 		6291B11420318B500061FDF8 /* STMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291B11320318B500061FDF8 /* STMainViewController.swift */; };
 		6291B11920318B500061FDF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6291B11820318B500061FDF8 /* Assets.xcassets */; };
 		6291B11C20318B500061FDF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6291B11A20318B500061FDF8 /* LaunchScreen.storyboard */; };
 		6291B12720318B500061FDF8 /* SteemThinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291B12620318B500061FDF8 /* SteemThinkTests.swift */; };
 		6291B13220318B500061FDF8 /* SteemThinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291B13120318B500061FDF8 /* SteemThinkUITests.swift */; };
+		6295BC7E2057A412002259CB /* STWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6295BC7D2057A412002259CB /* STWalletViewController.swift */; };
+		6295BC802057B300002259CB /* STMyBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6295BC7F2057B300002259CB /* STMyBlogViewController.swift */; };
 		62A587EA203EA79F00021655 /* STClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A587E9203EA79F00021655 /* STClient.swift */; };
 		62A587EE203EB4A900021655 /* STAFNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A587ED203EB4A900021655 /* STAFNetworkTools.swift */; };
 		62BC7C3520463E5100FFC7D1 /* STUserStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62BC7C3420463E5100FFC7D1 /* STUserStoryboard.storyboard */; };
@@ -194,6 +198,8 @@
 		628C61FC203FF89400045030 /* STLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLoginViewController.swift; sourceTree = "<group>"; };
 		628C61FD203FF89400045030 /* STLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = STLoginViewController.xib; sourceTree = "<group>"; };
 		628C620420400CCB00045030 /* MBProgress_STExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBProgress_STExtension.swift; sourceTree = "<group>"; };
+		62919A07205763AD00DCA253 /* STSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STSearchCell.swift; sourceTree = "<group>"; };
+		62919A08205763AD00DCA253 /* STSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = STSearchCell.xib; sourceTree = "<group>"; };
 		6291B10E20318B500061FDF8 /* SteemThink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SteemThink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6291B11120318B500061FDF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6291B11320318B500061FDF8 /* STMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STMainViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +212,8 @@
 		6291B12D20318B500061FDF8 /* SteemThinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SteemThinkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6291B13120318B500061FDF8 /* SteemThinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteemThinkUITests.swift; sourceTree = "<group>"; };
 		6291B13320318B500061FDF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6295BC7D2057A412002259CB /* STWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STWalletViewController.swift; sourceTree = "<group>"; };
+		6295BC7F2057B300002259CB /* STMyBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STMyBlogViewController.swift; sourceTree = "<group>"; };
 		62A587E9203EA79F00021655 /* STClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STClient.swift; sourceTree = "<group>"; };
 		62A587ED203EB4A900021655 /* STAFNetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STAFNetworkTools.swift; sourceTree = "<group>"; };
 		62A58809203EC45300021655 /* SteemThink-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SteemThink-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -282,6 +290,7 @@
 		62497F1D2044F07C00D1E607 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				62919A052057630F00DCA253 /* View */,
 				6273AB0B2051261C0081B6DF /* Model */,
 				6273AB0A205126070081B6DF /* Control */,
 			);
@@ -291,9 +300,9 @@
 		62497F1E2044F08300D1E607 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				622D245F2047FC4C00B84F4E /* View */,
 				62BC7C3420463E5100FFC7D1 /* STUserStoryboard.storyboard */,
-				62497F1F2044F0A900D1E607 /* STUserViewController.swift */,
+				6295BC7C20579B9E002259CB /* Control */,
+				622D245F2047FC4C00B84F4E /* View */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -550,6 +559,23 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		62919A052057630F00DCA253 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				62919A062057639700DCA253 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		62919A062057639700DCA253 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				62919A07205763AD00DCA253 /* STSearchCell.swift */,
+				62919A08205763AD00DCA253 /* STSearchCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		6291B10520318B500061FDF8 = {
 			isa = PBXGroup;
 			children = (
@@ -609,6 +635,16 @@
 				6291B13320318B500061FDF8 /* Info.plist */,
 			);
 			path = SteemThinkUITests;
+			sourceTree = "<group>";
+		};
+		6295BC7C20579B9E002259CB /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				62497F1F2044F0A900D1E607 /* STUserViewController.swift */,
+				6295BC7D2057A412002259CB /* STWalletViewController.swift */,
+				6295BC7F2057B300002259CB /* STMyBlogViewController.swift */,
+			);
+			path = Control;
 			sourceTree = "<group>";
 		};
 		747E500180170A5ACE2E386F /* Frameworks */ = {
@@ -771,6 +807,7 @@
 				62497F532044FA2A00D1E607 /* loading_v1_00004@2x.png in Resources */,
 				62BC7C442046A1AD00FFC7D1 /* STContentHeaderView.xib in Resources */,
 				6280F8752040F8F900A1F39B /* STMainTableViewCell.xib in Resources */,
+				62919A0A205763AD00DCA253 /* STSearchCell.xib in Resources */,
 				622D245920479CBD00B84F4E /* STContentNoDataFooterView.xib in Resources */,
 				62497F652044FA2A00D1E607 /* loading_v1_00001@2x.png in Resources */,
 				62497F602044FA2A00D1E607 /* loading_v1_00027@2x.png in Resources */,
@@ -883,6 +920,7 @@
 				6280F8F42041490800A1F39B /* NSDictionary_STExtension.swift in Sources */,
 				62A587EE203EB4A900021655 /* STAFNetworkTools.swift in Sources */,
 				6273AB0D205126810081B6DF /* STSearchResult.swift in Sources */,
+				6295BC802057B300002259CB /* STMyBlogViewController.swift in Sources */,
 				62497F1C2044EC8800D1E607 /* STTabBarViewController.swift in Sources */,
 				62BC7C392046863F00FFC7D1 /* STContentDetailViewController.swift in Sources */,
 				6280F8F12041323200A1F39B /* STBaseModel.swift in Sources */,
@@ -899,11 +937,13 @@
 				62BC7C422046A19E00FFC7D1 /* STContentHeaderView.swift in Sources */,
 				62882E56204CF1230076880A /* STFormatter.swift in Sources */,
 				62497F6F204558BC00D1E607 /* STUser.swift in Sources */,
+				62919A09205763AD00DCA253 /* STSearchCell.swift in Sources */,
 				62882E58204CF6AF0076880A /* STRegex.swift in Sources */,
 				62497F212044F0A900D1E607 /* STUserViewController.swift in Sources */,
 				6280F8712040F79600A1F39B /* STBaseTableViewCell.swift in Sources */,
 				628C61FE203FF89400045030 /* STLoginViewController.swift in Sources */,
 				627FE3D32043A13B00D34A36 /* STMainCellFunctionView.swift in Sources */,
+				6295BC7E2057A412002259CB /* STWalletViewController.swift in Sources */,
 				62D0E1FD2049223A00145972 /* STCommentInputView.swift in Sources */,
 				62497F6D204505CC00D1E607 /* STWMPageViewController.swift in Sources */,
 				6291B11220318B500061FDF8 /* AppDelegate.swift in Sources */,

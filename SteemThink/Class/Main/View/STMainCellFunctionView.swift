@@ -94,7 +94,7 @@ class STMainFunctionItem: UIView {
     //MARK: - 单机手势
     @objc func itemTap() {
         if self.target != nil && self.selector != nil {
-            (self.target! as AnyObject).perform(self.selector!, with: nil, afterDelay: 0.0)
+            (self.target! as AnyObject).perform(self.selector!, with: self, afterDelay: 0.0)
         }
     }
 }

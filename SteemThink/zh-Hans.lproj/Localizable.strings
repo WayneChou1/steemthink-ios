@@ -46,3 +46,9 @@
 "Post" = "发布";
 "Post Artical" = "发布文章";
 "Please input your artical" = "请输入文章内容";
+
+// MARK: - 钱包
+"Wallet" = "钱包";
+
+// MARK: - 我的问题
+"My Questions" = "我的问题";
